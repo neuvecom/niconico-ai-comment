@@ -1,0 +1,29 @@
+/* プレイヤー上に重ねる透過レイヤー。クリックは下の動画へ透過させる。 */
+.nico-ai-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2147483000; /* プレイヤーUIより前面に */
+}
+
+/* 個々の弾幕コメント。JS が top と transform(translateX) を制御する。 */
+.nico-ai-comment {
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  line-height: 1.2;
+  font-family: "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  /* 明るい動画上でも読めるように縁取り */
+  text-shadow:
+    1px 1px 2px rgba(0, 0, 0, 0.9),
+    -1px -1px 2px rgba(0, 0, 0, 0.9),
+    1px -1px 2px rgba(0, 0, 0, 0.9),
+    -1px 1px 2px rgba(0, 0, 0, 0.9);
+  will-change: transform;
+  user-select: none;
+}
