@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "niconico AI Comment (mock)",
+  "version": "0.1.0",
+  "description": "ニコニコ動画のプレイヤー上にAIキャラクターのコメントを弾幕として擬似的に流します（ローカル描画のみ・自動投稿なし）。",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.nicovideo.jp/watch/*",
+        "https://sp.nicovideo.jp/watch/*"
+      ],
+      "css": ["content.css"],
+      "js": ["data/mock-comments.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
